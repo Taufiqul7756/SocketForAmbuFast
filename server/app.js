@@ -8,7 +8,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*", // Allow any origin for simplicity (for development only)
+    origin: "*",
     methods: ["GET", "POST"],
   },
 });
@@ -27,7 +27,7 @@ io.on("connection", (socket) => {
   // Listen for incoming messages
   socket.on("message", (data) => {
     console.log(`Message from ${socket.id}: ${data}`);
-    io.emit("receive-msg", { id: socket.id, message: data }); // Broadcast message to all clients
+    io.emit("receive-msg", { id: socket.id, message: data });
   });
 
   // Handle user disconnection
