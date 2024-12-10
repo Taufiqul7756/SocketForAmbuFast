@@ -15,10 +15,9 @@ const io = new Server(server, {
 
 // Active users and order state management
 const activeUsers = new Set();
-let activeOrders = {}; // { orderId: { id, location, driverId } }
-let driverOrderMap = {}; // { driverId: orderId }
+let activeOrders = {};
+let driverOrderMap = {};
 
-// Root endpoint
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
