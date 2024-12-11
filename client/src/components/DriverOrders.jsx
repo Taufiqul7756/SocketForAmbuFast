@@ -3,7 +3,7 @@ import socket from "./socket";
 
 const DriverOrders = () => {
   const [orderRequests, setOrderRequests] = useState([]);
-  const [acceptedOrderId, setAcceptedOrderId] = useState(null); // Track accepted order
+  const [acceptedOrderId, setAcceptedOrderId] = useState(null);
 
   useEffect(() => {
     // Notify server about driver's role
